@@ -70,24 +70,36 @@ To limit to a single subscription, also set:
   python3 azure_storage_audit.py
 ```
 
-##  ✅ Example Output
+## 🖥️ Example Output
 
-📦 Subscription: My Company Prod Subscription (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)
-  🖥️ SQL Server: my-sql-server-prod (uksouth, RG: prod-resources)
-    ⚠️ Insecure firewall rule: AllowAllIPs allows all IPs
-    ❌ Server-level threat detection is disabled!
-    ⚠️ No email addresses configured for threat alerts.
-    ⚠️ Email to admins is not enabled.
-    ⚠️ Threat detection retention period is 0 days.
-    📂 Database: customerdb (Status: Online)
-      ❌ TDE (encryption at rest) is not enabled!
-      ❌ Auditing is not enabled!
-      ⚠️ Threat detection is disabled at DB level!
-      ⚠️ No email addresses configured for DB threat alerts.
-      ⚠️ Email to admins not enabled at DB level.
-      ⚠️ Threat detection retention period is 0 days.
-      ⚠️ No geo-replication configured.
+```bash
+🔐 Azure Storage Account Security Audit Across All Subscriptions
 
-    📂 Database: ordersdb (Status: Online)
-      🔁 Geo-replication: Linked to sql-server-dr in northeurope
+📦 Scanning Subscription: Production Subscription (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)
 
+🔎 Storage Account: mystorageprod (RG: rg-prod-storage)
+ - HTTPS Only: ✅ Enforced
+ - Public Blob Access: ❌ Disabled (Secure)
+ - Microsoft Trusted Services Access: ✅ Enabled
+ - Encryption: ✅ Enabled with Microsoft.Keyvault
+   - Customer Managed Key (CMK): ✅ Used
+ - Access Keys: ✅ Present (Access Key Auth possible)
+ - Key Rotation: ⚠️ Not detectable via SDK. Check Azure Monitor or Key Vault settings.
+
+🔎 Storage Account: devstoragetest (RG: rg-dev-resources)
+ - HTTPS Only: ❌ Not enforced
+ - Public Blob Access: ⚠️ Enabled (Risky)
+ - Microsoft Trusted Services Access: ❌ Not allowed
+ - Encryption: ✅ Enabled with Microsoft.Storage
+ - Access Keys: ✅ Present (Access Key Auth possible)
+ - Key Rotation: ⚠️ Not detectable via SDK. Check Azure Monitor or Key Vault settings.
+
+📦 Scanning Subscription: Sandbox (yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy)
+
+🔎 Storage Account: sandboxlogs (RG: sandbox-rg)
+ - HTTPS Only: ✅ Enforced
+ - Public Blob Access: ❌ Disabled (Secure)
+ - Microsoft Trusted Services Access: ✅ Enabled
+ - Encryption: ✅ Enabled with Microsoft.Storage
+ - Access Keys: ❌ Not retrievable (insufficient permissions)
+ - Key Rotation: ⚠️ Not detectable via SDK. Check Azure Monitor or Key Vault settings.
