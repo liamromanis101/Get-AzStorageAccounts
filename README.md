@@ -32,19 +32,19 @@ For each Azure Storage Account, this script checks:
 - Azure CLI (`az login`) or service principal authentication
 - Python packages:
   ```bash
-  pip install azure-identity azure-mgmt-resource azure-mgmt-storage
+  pip install azure-identity azure-mgmt-resource azure-mgmt-storage```plaintext
 
 ## 🔧 Usage
 
 ### 1. Clone the repository
 
-```bash
+bash
 git clone https://github.com/liamromanis101/Get-AzStorageAccounts/
-cd Get-AzStorageAccounts```
+cd Get-AzStorageAccounts
 
 ### 2. Authenticate with Azure
 
-```az login
+az login
 
 alternatively, set environment variables:
 
@@ -54,20 +54,19 @@ alternatively, set environment variables:
 
 To limit to a single subscription, also set:
 
-    export AZURE_SUBSCRIPTION_ID="your-subscription-id"```
+    export AZURE_SUBSCRIPTION_ID="your-subscription-id"`
 
 ### 3. Install required Python packages
 
-```pip install azure-identity azure-mgmt-resource azure-mgmt-storage```
+pip install azure-identity azure-mgmt-resource azure-mgmt-storage
 
 ### 4. Run the script:
 
-  ```python3 azure_storage_audit.py```
+python3 azure_storage_audit.py
 
 
 ##  ✅ Example Output
 
-```plaintext
 📦 Subscription: My Company Prod Subscription (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)
   🖥️ SQL Server: my-sql-server-prod (uksouth, RG: prod-resources)
     ⚠️ Insecure firewall rule: AllowAllIPs allows all IPs
