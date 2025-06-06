@@ -34,7 +34,7 @@ For each Azure Storage Account, this script checks:
   ```bash
   pip install azure-identity azure-mgmt-resource azure-mgmt-storage
 
-  ## 🔧 Usage
+## 🔧 Usage
 
 ### 1. Clone the repository
 
@@ -44,30 +44,29 @@ cd Get-AzStorageAccounts
 
 ### 2. Authenticate with Azure
 
-Option A: Use Azure CLI (Interactive)
-
 az login
 
-Option B: Use a Service Principal (Non-interactive / CI)
+alternatively, set environment variables:
 
-export AZURE_CLIENT_ID="your-client-id"
-export AZURE_TENANT_ID="your-tenant-id"
-export AZURE_CLIENT_SECRET="your-client-secret"
+  export AZURE_CLIENT_ID="your-client-id"
+  export AZURE_TENANT_ID="your-tenant-id"
+  export AZURE_CLIENT_SECRET="your-client-secret"
 
-    Optional: To limit to a single subscription, also set:
+To limit to a single subscription, also set:
 
     export AZURE_SUBSCRIPTION_ID="your-subscription-id"
 
-3. Install required Python packages
+### 3. Install required Python packages
 
 pip install azure-identity azure-mgmt-resource azure-mgmt-storage
 
-4. Run th
-python3 azure_storage_audit.py
+### 4. Run the script:
+
+  python3 azure_storage_audit.py
 
 
 
-#### ✅ Example Output
+##  ✅ Example Output
 
 ```plaintext
 📦 Subscription: My Company Prod Subscription (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)
