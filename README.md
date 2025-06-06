@@ -40,11 +40,11 @@ For each Azure Storage Account, this script checks:
 
 ```bash
 git clone https://github.com/liamromanis101/Get-AzStorageAccounts/
-cd Get-AzStorageAccounts
+cd Get-AzStorageAccounts```
 
 ### 2. Authenticate with Azure
 
-az login
+```az login
 
 alternatively, set environment variables:
 
@@ -54,16 +54,15 @@ alternatively, set environment variables:
 
 To limit to a single subscription, also set:
 
-    export AZURE_SUBSCRIPTION_ID="your-subscription-id"
+    export AZURE_SUBSCRIPTION_ID="your-subscription-id"```
 
 ### 3. Install required Python packages
 
-pip install azure-identity azure-mgmt-resource azure-mgmt-storage
+```pip install azure-identity azure-mgmt-resource azure-mgmt-storage```
 
 ### 4. Run the script:
 
-  python3 azure_storage_audit.py
-
+  ```python3 azure_storage_audit.py```
 
 
 ##  ✅ Example Output
