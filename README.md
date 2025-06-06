@@ -31,8 +31,10 @@ For each Azure Storage Account, this script checks:
 - Python 3.7+
 - Azure CLI (`az login`) or service principal authentication
 - Python packages:
-  ```bash
-  pip install azure-identity azure-mgmt-resource azure-mgmt-storage```plaintext
+  ```
+  bash
+  pip install azure-identity azure-mgmt-resource azure-mgmt-storage
+  ```
 
 ## 🔧 Usage
 
