@@ -37,33 +37,36 @@ For each Azure Storage Account, this script checks:
 ## 🔧 Usage
 
 ### 1. Clone the repository
-
+```
 bash
 git clone https://github.com/liamromanis101/Get-AzStorageAccounts/
 cd Get-AzStorageAccounts
+```
 
 ### 2. Authenticate with Azure
 
 az login
 
 alternatively, set environment variables:
-
+```
   export AZURE_CLIENT_ID="your-client-id"
   export AZURE_TENANT_ID="your-tenant-id"
   export AZURE_CLIENT_SECRET="your-client-secret"
+```
 
 To limit to a single subscription, also set:
-
-    export AZURE_SUBSCRIPTION_ID="your-subscription-id"`
+```
+    export AZURE_SUBSCRIPTION_ID="your-subscription-id"
+```
 
 ### 3. Install required Python packages
-
-pip install azure-identity azure-mgmt-resource azure-mgmt-storage
-
+```
+  pip install azure-identity azure-mgmt-resource azure-mgmt-storage
+```
 ### 4. Run the script:
-
-python3 azure_storage_audit.py
-
+```
+  python3 azure_storage_audit.py
+```
 
 ##  ✅ Example Output
 
@@ -74,7 +77,6 @@ python3 azure_storage_audit.py
     ⚠️ No email addresses configured for threat alerts.
     ⚠️ Email to admins is not enabled.
     ⚠️ Threat detection retention period is 0 days.
-
     📂 Database: customerdb (Status: Online)
       ❌ TDE (encryption at rest) is not enabled!
       ❌ Auditing is not enabled!
